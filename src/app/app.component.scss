@@ -1,0 +1,18 @@
+.navbar-menu-container {
+  display: flex;
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .search-input {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.ui-menubar .ui-menubar-custom {
+  float: left;
+  width: 100%;
+}
