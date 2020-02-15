@@ -1,0 +1,35 @@
+@import '../../../assets/keyframes.scss';
+
+:host {
+  cursor: pointer;
+}
+
+.left-side {
+  height: auto;
+  animation: 
+      grow 4s forwards,
+      shake 0.5s linear 2s,
+      shake 0.35s linear 2.5s,
+      shake 0.25s linear 2.85s,
+      shake 0.15s linear 3.15s,
+      shake 0.10s linear 3.30s,
+      shake 0.07s linear 3.40s,
+      shake 0.05s linear 3.47s,
+      shake 0.01s linear 3.52s,
+      leaveLeft 1s forwards 4.1s;
+}
+
+.right-side {
+  height: auto;
+  animation: 
+      grow 4s forwards,
+      shake 0.5s linear 2s,
+      shake 0.35s linear 2.5s,
+      shake 0.25s linear 2.85s,
+      shake 0.15s linear 3.15s,
+      shake 0.10s linear 3.30s,
+      shake 0.07s linear 3.40s,
+      shake 0.05s linear 3.47s,
+      shake 0.01s linear 3.52s,
+      leaveRight 1s forwards 4.1s;
+}
