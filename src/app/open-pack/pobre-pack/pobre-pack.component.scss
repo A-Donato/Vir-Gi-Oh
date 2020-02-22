@@ -1,4 +1,4 @@
-@import '../../../assets/keyframes.scss';
+@import '../../../assets/keyframes';
 
 :host {
   display: flex;
@@ -7,10 +7,9 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   font-size: 14px;
-  left: 0px;
-  top: 0px;
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet, white);
 }
 
 #pobre {
@@ -23,36 +22,17 @@
   background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: flashing 1.5s forwards, rainbow 1.5s linear, dancing 1s linear 1.5s infinite;
   z-index: 10;
   opacity: 0;
-}
-
-.lionKing {
-  position: absolute;
-  animation: moveIcon 6s linear 2s infinite;
-  width: 150px;
-  height: 90px;
-  z-index: 1;
-  top: 1200px;
-  left: 2000px;
-}
-
-.lionKing2 {
-  position: absolute;
-  animation: moveIcon2 6s linear 2s infinite;
-  width: 150px;
-  height: 90px;
-  z-index: 1;
-  top: 200px;
-  right: 2000px;
-}
-
-#touchMeNot{
-  position: absolute;
-  border: 1px solid red;
-  height: 50px;
-  min-width: 100px;
-  max-width: 120px;
-  width: auto;
+  animation: 
+    flashing 1.5s forwards,
+    rainbow 1.5s linear,
+    dancing 1s linear 1.5s infinite,
+    flashing 1.5s forwards 3s,
+    rainbow 1.5s linear 4.5s,
+    flashing 1.5s forwards 6s,
+    rainbow 1.5s linear 7.5s,
+    flashing 1.5s forwards 9s,
+    rainbow 1.5s linear 10.5s,
+    flashing 1.5s forwards 12s;
 }

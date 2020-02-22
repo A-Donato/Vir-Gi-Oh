@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FloatingLionKingComponent } from './floating-lion-king.component';
+import { UltraRarePackComponent } from './ultra-rare-pack.component';
 
-describe('FloatingLionKingComponent', () => {
-  let component: FloatingLionKingComponent;
-  let fixture: ComponentFixture<FloatingLionKingComponent>;
+describe('UltraRarePackComponent', () => {
+  let component: UltraRarePackComponent;
+  let fixture: ComponentFixture<UltraRarePackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FloatingLionKingComponent ]
+      declarations: [ UltraRarePackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FloatingLionKingComponent);
+    fixture = TestBed.createComponent(UltraRarePackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
