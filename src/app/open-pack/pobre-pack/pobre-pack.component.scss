@@ -16,8 +16,6 @@
   color: white;
   margin: 0;
   padding: 0;
-  font-size: 16rem;
-  /* -webkit-text-stroke: 6px white; */
   background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet, white);
   background-size: 300%;
   -webkit-background-clip: text;
@@ -35,4 +33,12 @@
     flashing 1.5s forwards 9s,
     rainbow 1.5s linear 10.5s,
     flashing 1.5s forwards 12s;
+
+  @media only screen and (min-width: $breakpoint-mobile) {
+    font-size: 7rem;
+  }
+
+  @media only screen and (min-width: $breakpoint-web) {
+    font-size: 16rem;
+  }
 }

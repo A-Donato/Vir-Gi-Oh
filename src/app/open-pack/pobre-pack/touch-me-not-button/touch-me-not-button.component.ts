@@ -10,6 +10,7 @@ export class TouchMeNotButtonComponent implements OnInit, OnChanges {
   @Input() show = false;
   exitButtonText = 'Salir';
   exitButtonHovers = 0;
+  exitButtonLabels = ['Cuchao!', 'Cuchao!', 'Te la creíste xd. Salir', 'Cachica!', 'Cachica!', 'Soy el rasho makuin xd'];
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -20,13 +21,16 @@ export class TouchMeNotButtonComponent implements OnInit, OnChanges {
   }
 
   exit() {
-    // this.router.navigate(['']);
+    // This check is in order to not exit if button is clicked before all movements are made
+    // This can happen if user is fast or if on mobile
+    if (this.exitButtonHovers === this.exitButtonLabels.length) {
+      // this.router.navigate(['']);
+    }
   }
 
   onHoverExitButton() {
-    const exitButtonLabels = ['Cuchao!', 'Cuchao!', 'Te la creíste xd. Salir', 'Cachica!', 'Cachica!', 'Soy el rasho makuin xd'];
-    this.exitButtonText = exitButtonLabels[this.exitButtonHovers];
-    if (this.exitButtonHovers !== exitButtonLabels.length) {
+    this.exitButtonText = this.exitButtonLabels[this.exitButtonHovers];
+    if (this.exitButtonHovers !== this.exitButtonLabels.length) {
       this.moveButton();
       this.exitButtonHovers++;
     } else {

@@ -35,3 +35,15 @@
     shake 0.01s linear 4.52s,
     leaveRight 1s forwards 5.1s;
 }
+
+@media only screen and (min-width: $breakpoint-mobile) {
+  .pack-part {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-web) {
+  .pack-part {
+    width: 150px;
+  }
+}

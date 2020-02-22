@@ -20,13 +20,9 @@ export class OpenPackComponent implements OnInit {
     var audio = new Audio();
     audio.src = '../../assets/mp3/rising-drums.mp3';
     audio.load();
-    // audio.volume = 0;
     audio.play();
     audio.onended = () => {
       this.packOpened = true;
     }
-    // setTimeout(() => {
-    //   this.packOpened = true;
-    // }, 5500);
   }
 }
