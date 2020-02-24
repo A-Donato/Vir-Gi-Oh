@@ -8,9 +8,10 @@ import { PobrePackComponent } from './open-pack/pobre-pack/pobre-pack.component'
 import { ClosedPackComponent } from './open-pack/closed-pack/closed-pack.component';
 import { FloatingIcons } from './open-pack/pobre-pack/floating-icons/floating-icons.component';
 import { TouchMeNotButtonComponent } from './open-pack/pobre-pack/touch-me-not-button/touch-me-not-button.component';
-import { RegularPackComponent } from './open-pack/regular-pack/regular-pack.component';
+import { RarePackComponent } from './open-pack/rare-pack/rare-pack.component';
 import { SuperRarePackComponent } from './open-pack/super-rare-pack/super-rare-pack.component';
 import { UltraRarePackComponent } from './open-pack/ultra-rare-pack/ultra-rare-pack.component';
+import { PackCardComponent } from './open-pack/pack-card/pack-card.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { UltraRarePackComponent } from './open-pack/ultra-rare-pack/ultra-rare-p
     ClosedPackComponent,
     FloatingIcons,
     TouchMeNotButtonComponent,
-    RegularPackComponent,
+    RarePackComponent,
     SuperRarePackComponent,
-    UltraRarePackComponent
+    UltraRarePackComponent,
+    PackCardComponent
   ],
   imports: [
     BrowserModule,

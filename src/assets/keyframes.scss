@@ -141,6 +141,9 @@
 // Web-only animations
 @media only screen and (min-width: $breakpoint-web) {
     
+    $card-width: 300px;
+    $card-height: 435px; 
+
     @keyframes grow {
         0% {
             width: 150px;
@@ -166,6 +169,201 @@
         100% {
             width: 200px;
             opacity: 1;
+        }
+    }
+
+    @keyframes moveXFromLeft {
+        from {
+            left: 0;
+        }
+        50% {
+            left: 100%;
+        }
+        to {
+            left: calc(50% - #{$card-width/2});
+        }
+    }
+
+    @keyframes moveXFromRight {
+        from {
+            right: 0;
+        }
+        50% {
+            right: 100%;
+        }
+        to {
+            right: calc(50% - #{$card-width/2});
+        }
+    }
+
+    @keyframes moveYFromTop {
+        0% {
+            top: -100px;
+        }
+        100% {
+            top: calc(50vh - #{$card-height/3});
+        }
+    }
+
+    @keyframes moveYFromTopButLess {
+        0% {
+            top: -50px;
+        }
+        100% {
+            top: calc(50vh - #{$card-height/1.5});
+        }
+    }
+
+    @keyframes growAndAppear {
+        from {
+            opacity: 0;
+            transform: scale(0.1);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shrinkAndShake {
+        from {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.8);
+        }
+
+        60% {
+            transform: scale(0.8) translateX(-7px);
+        }
+
+        70% {
+            transform: scale(0.8) translateX(7px);
+        }
+
+        80% {
+            transform: scale(0.8);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes rotateY {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(180deg);
+        }
+    }
+
+    @keyframes rotateMoreEpic {
+        from {
+            transform: rotateY(0deg);
+        }
+        60% {
+            transform: rotateY(180deg);
+        }
+        to {
+            transform: rotateY(180deg);
+        }
+    }
+
+    @keyframes beat { // Giants
+        from {
+            transform: scale(1) rotateY(0deg);
+        }
+        11% {
+            transform: scale(0.9) rotateY(180deg);
+        }
+        24% {
+            transform: scale(1) rotateY(180deg);
+        }
+        25% {
+            transform: scale(0.9) rotateY(180deg);
+        }
+        40% {
+            transform: scale(1) rotateY(180deg);
+        }
+        41% {
+            transform: scale(0.9) rotateY(180deg);
+        }
+        62% {
+            transform: scale(1) rotateY(180deg);
+        }
+        63% {
+            transform: scale(0.9) rotateY(180deg);
+        }
+        87% {
+            transform: scale(1) rotateY(180deg);
+        }
+        88% {
+            transform: scale(0.9) rotateY(180deg);
+        }
+        to {
+            transform: scale(1) rotateY(0deg);
+        }
+    }
+
+    @keyframes backgroundGiants {
+        0% {
+            background: darkslategray;
+        }
+        4% {
+            background: rgba(10, 10, 10);
+        }
+        14% {
+            background: rgba(10, 10, 10);
+        }
+        14.5% {
+            background: rgba(150, 150, 150);
+        }
+        15% {
+            background: rgba(10, 10, 10);
+        }
+        26% {
+            background: rgba(10, 10, 10);
+        }
+        26.5% {
+            background: rgba(150, 150, 150);
+        }
+        27% {
+            background: rgba(10, 10, 10);
+        }
+        50% {
+            background: rgba(10, 10, 10);
+        }
+        50.5% {
+            background: rgba(150, 150, 150);
+        }
+        51% {
+            background: rgba(10, 10, 10);
+        }
+        60% {
+            background: rgba(10, 10, 10);
+        }
+        60.5% {
+            background: rgba(150, 150, 150);
+        }
+        61% {
+            background: rgba(10, 10, 10);
+        }
+        70% {
+            background: rgba(10, 10, 10);
+        }
+        70.5% {
+            background: rgba(150, 150, 150);
+        }
+        71% {
+            background: rgba(10, 10, 10);
+        }
+        100% {
+            background: rgba(10, 10, 10);
         }
     }
 }

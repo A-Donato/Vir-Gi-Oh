@@ -1,0 +1,27 @@
+<div *ngIf="showCard" class="flip-card" [ngClass]="{
+  'flip-card-show-1': number === 1 && showCard,
+  'flip-card-show-2': number === 2 && showCard,
+  'flip-card-show-3': number === 3 && showCard,
+  'flip-card-beat': beat,
+  'flip-card-beat-1': number === 1 && beat,
+  'flip-card-beat-2': number === 2 && beat,
+  'flip-card-beat-3': number === 3 && beat
+}">
+  <img 
+    class="flip-card-back"
+    [ngClass]="{
+      'flip-card-back-1': number === 1 && showCard,
+      'flip-card-back-2': number === 2 && showCard,
+      'flip-card-back-3': number === 3 && showCard
+    }"
+    src="../../../assets/png/card-back.png">
+  <img 
+    class="flip-card-front" 
+    [ngClass]="{
+      'flip-card-front-1': number === 1 && showCard,
+      'flip-card-front-2': number === 2 && showCard,
+      'flip-card-front-3': number === 3 && showCard
+    }"
+    [ngStyle]="{'background-color': revealCard ? 'inherit' : 'black'}"
+    src="https://ygoprodeck.com/pics/46986414.jpg">
+</div>

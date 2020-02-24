@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegularPackComponent } from './regular-pack.component';
+import { RarePackComponent } from './rare-pack.component';
 
-describe('RegularPackComponent', () => {
-  let component: RegularPackComponent;
-  let fixture: ComponentFixture<RegularPackComponent>;
+describe('RarePackComponent', () => {
+  let component: RarePackComponent;
+  let fixture: ComponentFixture<RarePackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegularPackComponent ]
+      declarations: [ RarePackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegularPackComponent);
+    fixture = TestBed.createComponent(RarePackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
