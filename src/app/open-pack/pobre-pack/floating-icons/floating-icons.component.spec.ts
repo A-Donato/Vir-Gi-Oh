@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FloatingIcons } from './floating-lion-king.component';
+import { FloatingIcons } from './floating-icons.component';
 
 describe('FloatingLionKingComponent', () => {
   let component: FloatingIcons;

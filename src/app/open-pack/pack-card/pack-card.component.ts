@@ -10,6 +10,7 @@ export class PackCardComponent implements OnInit, OnChanges {
   @Input() showCard = false;
   @Input() revealCard = false;
   @Input() beat = false;
+  @Input() danceTusa = false;
 
   constructor() { }
 
@@ -20,6 +21,7 @@ export class PackCardComponent implements OnInit, OnChanges {
     this.showCard = changes.showCard ? changes.showCard.currentValue : this.showCard;
     this.revealCard = changes.revealCard ? changes.revealCard.currentValue : this.revealCard;
     this.beat = changes.beat ? changes.beat.currentValue : this.beat;
+    this.danceTusa = changes.danceTusa ? changes.danceTusa.currentValue : this.danceTusa;
   }
 
 }

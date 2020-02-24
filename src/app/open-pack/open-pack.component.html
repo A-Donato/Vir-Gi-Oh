@@ -1,7 +1,5 @@
 <app-closed-pack *ngIf="!packOpened" (click)="openPack()" [openPack]="openingPack"></app-closed-pack>
 <ng-container *ngIf="packOpened">
   <!-- <app-pobre-pack></app-pobre-pack> -->
-  <app-rare-pack></app-rare-pack>
-  <!-- <app-super-rare-pack></app-super-rare-pack> -->
-  <!-- <app-ultra-rare-pack></app-ultra-rare-pack> -->
+  <app-opened-pack></app-opened-pack>
 </ng-container>

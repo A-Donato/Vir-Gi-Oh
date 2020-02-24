@@ -104,6 +104,18 @@
     }
 }
 
+@keyframes dissappear {
+    from {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 // Mobile-only animations
 @media only screen and (min-width: $breakpoint-mobile) {
 
@@ -303,10 +315,10 @@
             transform: scale(1) rotateY(180deg);
         }
         88% {
-            transform: scale(0.9) rotateY(180deg);
+            transform: scale(0.9) rotateY(0deg);
         }
         to {
-            transform: scale(1) rotateY(0deg);
+            transform: scale(1) rotateY(180deg);
         }
     }
 
@@ -364,6 +376,18 @@
         }
         100% {
             background: rgba(10, 10, 10);
+        }
+    }
+
+    @keyframes danceTusa {
+        from {
+            transform: rotate(-30deg) rotateY(180deg);
+        }
+        50% {
+            transform: rotate(30deg) rotateY(180deg);
+        }
+        to {
+            transform: rotate(-30deg) rotateY(180deg);
         }
     }
 }

@@ -18,15 +18,7 @@
   justify-content: center;
 
   &-show {
-    &-1 {
-      animation:
-        moveYFromTop 3s ease-in-out forwards,
-        growAndAppear 3s ease-in-out forwards,
-        shrinkAndShake 2s ease-in-out 3s forwards,
-        rotateY 1s ease-in-out 5s forwards,
-    }
-
-    &-2 {
+    &-1, &-2 {
       animation:
         moveYFromTop 3s ease-in-out forwards,
         growAndAppear 3s ease-in-out forwards,
@@ -45,10 +37,7 @@
     }
   }
 
-  &-beat {
-    animation: 
-      beat 3.25s ease-in-out 4;
-
+  &-all-revealed {
     &-1, &-2 {
       top: calc(50vh - 300px/1.5);
     }
@@ -57,9 +46,19 @@
       top: calc(50vh - 400px/1.5);
     }
   }
+
+  &-beat {
+    animation: 
+      beat 3.25s ease-in-out 4 forwards;
+  }
+
+  &-dance-tusa {
+    animation:
+      danceTusa 2s ease-in-out infinite forwards;
+  }
 }
 
-.flip-card-front, .flip-card-back { // Dejo esta separación por las dudas
+.flip-card-img {
   position: absolute;
   width: 300px;
   height: auto;
