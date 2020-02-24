@@ -3,24 +3,38 @@
 
 
 :host {
+  width: 100%;
+  height: 100%;
+}
+
+.opened-pack {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: space-evenly;
   align-items: center;
-  animation: backgroundGiants 50s ease-in-out forwards;
-}
-
-@media only screen and (min-width: $breakpoint-mobile) {
-  :host {
-    flex-direction: column;
+  flex-direction: row;
+  animation: backgroundStart 25s ease-in-out forwards;
+  &-giants {
+    animation: backgroundGiants 25s ease-in-out forwards;
+  }
+  &-tusa {
+    animation: backgroundTusa 6s ease-in-out 4 forwards;
+  }
+  &-spaceman {
+    background-image: url('../../../assets/gif/explosion-after.gif');
+    background-size: 105%;
+    opacity: 0.5;
+    animation: backgroundSpaceman 3s ease-in-out forwards;
   }
 }
 
-@media only screen and (min-width: $breakpoint-web) {
-  :host {
-    flex-direction: row;
-  }
+.show-more-button {
+  position: absolute;
+  bottom: 5%;
+  width: 100px;
+  height: 25px;
+  animation: appear 0.5s forwards;
 }
 
 .explosion {
@@ -33,6 +47,48 @@
   animation: dissappear 4s ease-in-out forwards;
 }
 
+.gifs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+
+  .ultra-rare-gif {
+    &-1 {
+      position: absolute;
+      top: 60%;
+      left: 70%;
+      transform: rotate(20deg);
+    }
+    &-2 {
+      position: absolute;
+      top: 20%;
+      left: 80%;
+      transform: rotate(-20deg);
+    }
+    &-3 {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      transform: rotate(20deg);
+    }
+    &-4 {
+      position: absolute;
+      top: 70%;
+      left: 10%;
+      transform: rotate(-20deg);
+    }
+    &-5 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0.5;
+    }
+  }
+}
 // ================================================
 // For confetti only
 [class|="confetti"] {
@@ -44,6 +100,7 @@ $colors: (#d13447, #ffbf00, #263672);
 @for $i from 0 through 150 {
   $w: random(20);
   $l: random(100);
+
   .confetti-#{$i} {
     width: #{$w}px;
     height: #{$w*0.4}px;
@@ -60,5 +117,146 @@ $colors: (#d13447, #ffbf00, #263672);
       top: 110%;
       left: unquote($l+random(15)+"%");
     }
+  }
+}
+
+// ================================================
+// For fireworks only
+
+$particles: 50;
+$firework-width: 500;
+$firework-height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+    random($firework-width)-$firework-width / 2 + px random($firework-height)-$firework-height / 1.2 + px hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+
+@mixin keyframes ($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation-delay ($settings) {
+  -moz-animation-delay: $settings;
+  -webkit-animation-delay: $settings;
+  -o-animation-delay: $settings;
+  -ms-animation-delay: $settings;
+  animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+  -moz-animation-duration: $settings;
+  -webkit-animation-duration: $settings;
+  -o-animation-duration: $settings;
+  -ms-animation-duration: $settings;
+  animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+  -moz-animation: $settings;
+  -webkit-animation: $settings;
+  -o-animation: $settings;
+  -ms-animation: $settings;
+  animation: $settings;
+}
+
+@mixin transform ($settings) {
+  transform: $settings;
+  -moz-transform: $settings;
+  -webkit-transform: $settings;
+  -o-transform: $settings;
+  -ms-transform: $settings;
+}
+
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fireworks>.before,
+.fireworks>.after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+
+.fireworks>.after {
+  z-index: 5;
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity) {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+
+@include keyframes(position) {
+
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%
+  }
+
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
   }
 }

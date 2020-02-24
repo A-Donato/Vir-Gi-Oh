@@ -226,6 +226,63 @@
         }
     }
 
+    @keyframes leaveLeftExplosion {
+        0% {
+            transform: translate(0, 200px) rotateY(180deg);
+        }
+        25% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        30% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        32% {
+            transform: translate(-90px, 200px) rotateY(180deg);
+        }
+        34% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        36% {
+            transform: translate(-110px, 200px) rotateY(180deg);
+        }
+        38% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        40% {
+            transform: translate(-90px, 200px) rotateY(180deg);
+        }
+        42% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        44% {
+            transform: translate(-110px, 200px) rotateY(180deg);
+        }
+        46% {
+            transform: translate(-100px, 200px) rotateY(180deg);
+        }
+        75% {
+            transform: translate(-150px, 200px) rotateY(180deg);
+        }
+        100% {
+            transform: translate(-1000px, 200px) rotateY(0deg);
+        }
+    }
+
+    @keyframes leaveRightExplosion {
+        0% {
+            transform: translate(0px, 200px) rotateY(180deg);
+        }
+        25% {
+            transform: translate(100px, 200px) rotateY(180deg);
+        }
+        75% {
+            transform: translate(150px, 200px) rotateY(180deg);
+        }
+        100% {
+            transform: translate(1000px, 200px) rotateY(0deg);
+        }
+    }
+
     @keyframes growAndAppear {
         from {
             opacity: 0;
@@ -235,6 +292,15 @@
         to {
             opacity: 1;
             transform: scale(1);
+        }
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 
@@ -322,64 +388,175 @@
         }
     }
 
-    @keyframes backgroundGiants {
+    @keyframes backgroundStart {
         0% {
             background: darkslategray;
-        }
-        4% {
-            background: rgba(10, 10, 10);
-        }
-        14% {
-            background: rgba(10, 10, 10);
-        }
-        14.5% {
-            background: rgba(150, 150, 150);
         }
         15% {
             background: rgba(10, 10, 10);
         }
-        26% {
+        29% {
             background: rgba(10, 10, 10);
         }
-        26.5% {
-            background: rgba(150, 150, 150);
+        30% {
+            background: rgba(170, 170, 170);
         }
-        27% {
+        31% {
             background: rgba(10, 10, 10);
         }
-        50% {
+        52% {
             background: rgba(10, 10, 10);
         }
-        50.5% {
-            background: rgba(150, 150, 150);
+        53% {
+            background: rgba(170, 170, 170);
         }
-        51% {
+        54% {
             background: rgba(10, 10, 10);
         }
-        60% {
+        63% {
             background: rgba(10, 10, 10);
         }
-        60.5% {
-            background: rgba(150, 150, 150);
+        64% {
+            background: rgba(170, 170, 170);
         }
-        61% {
+        65% {
             background: rgba(10, 10, 10);
         }
-        70% {
+        66% {
+            background: rgba(170, 170, 170);
+        }
+        67% {
             background: rgba(10, 10, 10);
         }
-        70.5% {
-            background: rgba(150, 150, 150);
-        }
-        71% {
+        92% {
             background: rgba(10, 10, 10);
+        }
+        100% {
+            background: rgba(170, 170, 170);
+        }
+    }
+
+    @keyframes backgroundGiants {
+        0% {
+            background: rgba(10, 10, 180);
+        }
+        15% {
+            background: rgba(10, 10, 60);
+        }
+        16% {
+            background: rgba(170, 170, 170);
+        }
+        17% {
+            background: rgba(10, 10, 60);
+        }
+        18% {
+            background: rgba(170, 170, 170);
+        }
+        19% {
+            background: rgba(10, 10, 60);
+        }
+        25% {
+            background: rgb(7, 75, 7);
+        }
+        29% {
+            background: rgba(10, 30, 10);
+        }
+        30% {
+            background: rgba(170, 170, 170);
+        }
+        31% {
+            background: rgba(10, 30, 10);
+        }
+        35% {
+            background: rgb(85, 35, 165);
+        }
+        40% {
+            background: rgb(45, 15, 115);
+        }
+        41% {
+            background: rgba(170, 170, 170);
+        }
+        42% {
+            background: rgb(45, 15, 115);
+        }
+        43% {
+            background: rgba(170, 170, 170);
+        }
+        44% {
+            background: rgb(45, 15, 115);
+        }
+        49% {
+            background: rgb(50, 100, 165);
+        }
+        54% {
+            background: rgb(15, 45, 85);
+        }
+        55% {
+            background: rgba(170, 170, 170);
+        }
+        56% {
+            background: rgb(15, 45, 85);
+        }
+        92% {
+            background: rgba(10, 10, 10);
+        }
+        99% {
+            background: rgba(170, 170, 170);
         }
         100% {
             background: rgba(10, 10, 10);
         }
     }
 
-    @keyframes danceTusa {
+    @keyframes backgroundTusa {
+        0% {
+            background: pink;
+        }
+        25% {
+            background: fuchsia;
+        }
+        75% {
+            background: violet;
+        }
+        100% {
+            background: purple;
+        }
+    }
+
+    @keyframes backgroundSpaceman {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes danceTusa1 {
+        from {
+            transform: rotateY(180deg);
+        }
+        50% {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(180deg);
+        }
+    }
+
+    @keyframes danceTusa2 {
+        from {
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+        50% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        to {
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+    }
+
+    @keyframes danceTusa3 {
         from {
             transform: rotate(-30deg) rotateY(180deg);
         }
@@ -388,6 +565,21 @@
         }
         to {
             transform: rotate(-30deg) rotateY(180deg);
+        }
+    }
+
+    @keyframes beatSpaceman {
+        0% {
+            transform: scale(1) translateY(100px) rotateY(180deg);
+        }
+        50% {
+            transform: scale(0.9) translateY(100px) rotateY(180deg);
+        }
+        60% {
+            transform: scale(1) translateY(100px) rotateY(180deg);
+        }
+        100% {
+            transform: scale(1) translateY(100px) rotateY(180deg);
         }
     }
 }
