@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AudioService } from 'src/app/shared/audio.service';
+import { AudioService } from 'src/app/shared/services/audio.service';
 import { SelectItem } from 'primeng/api';
 import { EPIC_SOUNDS } from 'src/app/constants/epic-sounds';
 import { VIRGO_USERS } from 'src/app/constants/virgo-users';
-import { AuthService } from 'src/app/shared/auth.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
+import { ROUTES } from 'src/app/constants/routes-names';
 
 interface VirgoPlayer {
   label: string;
@@ -20,7 +22,7 @@ export class AuthenticationComponent implements OnInit {
   virgoPlayers: SelectItem[];
   selectedPlayer: VirgoPlayer;
 
-  constructor( private audioService: AudioService, private authService: AuthService ) { }
+  constructor( private audioService: AudioService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.playEpicAudio();
@@ -41,7 +43,7 @@ export class AuthenticationComponent implements OnInit {
 
   playEpicAudio() {
     const epicAudioPath = EPIC_SOUNDS.YU_GI_OH_OPENING;
-    // this.audioService.playSound(epicAudioPath);
+    this.audioService.playSound(epicAudioPath);
   }
 
   stopAudio() {
@@ -50,5 +52,7 @@ export class AuthenticationComponent implements OnInit {
 
   goToHomePage() {
     console.log('seleccionado', this.selectedPlayer);
+    this.authService.selectPlayer(this.selectedPlayer);
+    this.router.navigate([ROUTES.HOME_DASHBOARD]);
   }
 }

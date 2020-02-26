@@ -3,44 +3,18 @@
   height: calc(100% - 42px);
   width: 100%;
   display: grid;
-  background: radial-gradient(ellipse at bottom, rgb(0, 0, 0) 0%, #525252 100%);
 
   .slifer-container {
     height: 100%;
-
-    .slifer {
-      animation: goFast 10s;
-    }
+    position: relative;
   }
   .ra-container {
     height: 100%;
-
+    position: relative;
   }
   .obelisk-container {
     height: 100%;
-  }
-
-  @keyframes goFast {
-    // if $direction is 1=horizontal, case 2=vertical
-    $windowHeight: 1080;
-    $windowWidth: 1920;
-    $initPointX: 0;
-    $initPointY: 0;
-    $randomNumber: random(2);
-
-    @if $randomNumber==1 {
-      $initPointX: 0;
-      $initPointY: random($windowHeight);
-    } @else {
-      $initPointX: random($windowWidth);
-      $initPointY: 0;
-    }
-
-    $endPositionX: ($windowWidth - $initPointX);
-    $endPositionY: ($windowHeight - $initPointY);
-
-    from { top: $initPointY + 'px'; left: $initPointX + 'px'; }
-    to {top: $endPositionY + 'px'; left: $endPositionX + 'px';}
+    position: relative;
   }
 }
 
@@ -48,6 +22,7 @@
 @media only screen and (min-width: 370px) {
   .container {
     grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
     justify-content: center;
   }
 }
@@ -56,5 +31,6 @@
 @media only screen and (min-width: 1024px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
   }
 }

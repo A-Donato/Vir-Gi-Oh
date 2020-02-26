@@ -4,6 +4,10 @@
     height: 30vh;
     width: auto;
   }
+
+  span {
+    font-size: 1rem;
+  }
 }
 
 // TODO usar el archivo de variables de juampi
@@ -11,5 +15,24 @@
   .god-image {
     width: 30vw;
     height: auto;
+  }
+
+  span {
+    font-size: 4rem;
+  }
+}
+
+.action {
+  position: absolute;
+  top: 2%;
+  width: 100%;
+  text-align-last: center;
+
+  span {
+    color: snow;
+    font-family: "squealer-cheta", "arial", sans-serif;
+    padding: 0 1rem;
+    background-color: #000000e0;
+    border-radius: 2rem;
   }
 }

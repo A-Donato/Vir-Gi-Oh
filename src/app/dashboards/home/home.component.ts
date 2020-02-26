@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  gods = ['SLIFER', 'OBELISK', 'RA'];
+  actions = ['Ver Deck', 'Comprar Pack', 'Liberar Cartas'];
   constructor() { }
 
   ngOnInit(): void {

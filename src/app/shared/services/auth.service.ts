@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-
+  currentPlayer: string;
   constructor() { }
+
+  selectPlayer( playerID ) {
+    this.currentPlayer = playerID;
+  }
 }

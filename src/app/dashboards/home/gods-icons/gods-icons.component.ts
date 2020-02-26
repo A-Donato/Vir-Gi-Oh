@@ -15,6 +15,8 @@ export class GodsIconsComponent implements OnInit {
 
   constructor() { }
   @Input() godIdentifier: string;
+  @Input() actionName: string;
+  @Input() redirectTo: string;
 
   ngOnInit(): void {
     this.selectedGod = this.imagesOfGods[this.godIdentifier];
