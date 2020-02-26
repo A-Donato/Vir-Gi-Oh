@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
-    path: 'authentication',
+    path: 'auth',
     loadChildren: () => import('./dashboards/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {

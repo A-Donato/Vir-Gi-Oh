@@ -1,0 +1,15 @@
+//
+@media only screen and (min-width: 370px) {
+  .god-image {
+    height: 30vh;
+    width: auto;
+  }
+}
+
+// TODO usar el archivo de variables de juampi
+@media only screen and (min-width: 1024px) {
+  .god-image {
+    width: 30vw;
+    height: auto;
+  }
+}

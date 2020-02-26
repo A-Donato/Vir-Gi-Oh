@@ -16,3 +16,9 @@
   float: left;
   width: 100%;
 }
+
+.router-outlet {
+  height: calc(100%);
+  width: 100%;
+  background: radial-gradient(ellipse at bottom, rgb(0, 0, 0) 0%, #414141 100%);
+}
