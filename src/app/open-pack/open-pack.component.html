@@ -1,0 +1,4 @@
+<app-closed-pack *ngIf="!packOpened" (click)="openPack()" [openPack]="openingPack"></app-closed-pack>
+<ng-container *ngIf="packOpened">
+  <app-pobre-pack></app-pobre-pack>
+</ng-container>

@@ -1,0 +1,49 @@
+@import '../../../assets/keyframes.scss';
+
+:host {
+  cursor: pointer;
+}
+
+.left-side {
+  height: auto;
+  animation: 
+    grow 5s forwards,
+    shake 1s linear,
+    shake 0.5s linear 3s,
+    shake 0.35s linear 3.5s,
+    shake 0.25s linear 3.85s,
+    shake 0.15s linear 4.15s,
+    shake 0.10s linear 4.30s,
+    shake 0.07s linear 4.40s,
+    shake 0.05s linear 4.47s,
+    shake 0.01s linear 4.52s,
+    leaveLeft 1s forwards 5.1s;
+}
+
+.right-side {
+  height: auto;
+  animation: 
+    grow 5s forwards,
+    shake 1s linear,
+    shake 0.5s linear 3s,
+    shake 0.35s linear 3.5s,
+    shake 0.25s linear 3.85s,
+    shake 0.15s linear 4.15s,
+    shake 0.10s linear 4.30s,
+    shake 0.07s linear 4.40s,
+    shake 0.05s linear 4.47s,
+    shake 0.01s linear 4.52s,
+    leaveRight 1s forwards 5.1s;
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+  .pack-part {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-web) {
+  .pack-part {
+    width: 150px;
+  }
+}
