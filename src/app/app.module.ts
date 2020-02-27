@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,11 @@ import { TouchMeNotButtonComponent } from './open-pack/pobre-pack/touch-me-not-b
 import { RegularPackComponent } from './open-pack/regular-pack/regular-pack.component';
 import { SuperRarePackComponent } from './open-pack/super-rare-pack/super-rare-pack.component';
 import { UltraRarePackComponent } from './open-pack/ultra-rare-pack/ultra-rare-pack.component';
+
+// --------- PrimeNg Modules -----------
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,11 @@ import { UltraRarePackComponent } from './open-pack/ultra-rare-pack/ultra-rare-p
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MenubarModule,
+    InputTextModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
