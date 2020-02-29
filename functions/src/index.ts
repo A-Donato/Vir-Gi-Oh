@@ -111,7 +111,7 @@ app.post('/packs/buy', async (req, res) => {
       const card2Selected = availableCards.splice(random2, 1)[0];
 
       // clean de array from Normal cards for the last selection
-      const cardsBetterThanNormal = availableCards.filter( (card: { rarity: string; }) => card.rarity !== 'N' );
+      const cardsBetterThanNormal = availableCards.filter( (card: { rarity: string; }) => card.rarity === 'R' );
       const random3 = Math.floor(Math.random() * cardsBetterThanNormal.length);
       const card3Selected = cardsBetterThanNormal[random3];
 
