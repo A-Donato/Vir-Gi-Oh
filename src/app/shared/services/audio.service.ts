@@ -15,7 +15,7 @@ export class AudioService {
       musicPlayer.load();
       musicPlayer.play();
     } catch (error) {
-      console.log('explote para la mismisima mierda misma => ', error);
+      console.log('exploté para la mismísima mierda misma => ', error);
     }
   }
 
