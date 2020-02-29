@@ -46,7 +46,7 @@ testem.log
 Thumbs.db
 
 # Firebase cache
-/firebase
+/.firebase
 
 # Functions shits
 ## Compiled JavaScript files
