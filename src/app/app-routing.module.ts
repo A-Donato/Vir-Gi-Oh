@@ -9,14 +9,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./dashboards/authentication/authentication.module').then(m => m.AuthenticationModule)
+    path: 'auth', loadChildren: () => import('./dashboards/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./dashboards/home/home.module').then(m => m.HomeModule)
+    path: 'home', loadChildren: () => import('./dashboards/home/home.module').then(m => m.HomeModule)
   },
-  { path: 'open', component: OpenPackComponent}
+  {
+    path: 'open', component: OpenPackComponent
+  }
 ];
 
 @NgModule({

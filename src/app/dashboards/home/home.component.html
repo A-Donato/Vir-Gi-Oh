@@ -1,4 +1,8 @@
-<div class="container" id="grid">
+<div class="search-bar">
+  <input class="virgi-search" type="text" pInputText [(ngModel)]="searchText" placeholder="Escriba su virgi-busqueda aqui"/>
+  <p-button label="Buscar" (onClick)="executeSearch()" ></p-button>
+</div>
+<div class="container" id="grid" *ngIf="!showCardDetail">
   <div class="slifer-container">
     <app-gods-icons [godIdentifier]="gods[0]" [actionName]="actions[0]"></app-gods-icons>
   </div>
@@ -9,3 +13,7 @@
     <app-gods-icons [godIdentifier]='gods[2]' [actionName]="actions[2]"></app-gods-icons>
   </div>
 </div>
+<app-card-detail *ngIf="showCardDetail"
+
+>
+</app-card-detail>
