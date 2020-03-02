@@ -3,12 +3,16 @@ import * as firebaseHelper from 'firebase-functions-helper';
 import * as express from 'express';
 import * as bodyParser from "body-parser";
 
+
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
 const app = express();
 const main = express();
+const cors = require('cors');
 const contactsCollection = 'contacts';
 const cardsCollection = 'cartas';
+app.use(cors({ origin: true }));
+
 // const descartasCollection = 'descartas'; // que se yo chabon
 // const usersCollection = 'usuarios';
 
