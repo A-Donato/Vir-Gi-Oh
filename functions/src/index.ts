@@ -86,7 +86,12 @@ app.delete('/contacts/:contactId', async (req, res) => {
 app.get('/cards/:cardId', (req, res) => {
   firebaseHelper.firestore
       .getDocument(db, cardsCollection, req.params.cardId)
-      .then(doc => res.status(200).send(doc))
+      .then(doc => {
+        const cardToRetrieve = doc;
+        cardToRetrieve.id = Object.keys(doc)[0];
+        cardToRetrieve.picture = `https://ygoprodeck.com/pics/${cardToRetrieve.id}.jpg`;
+        res.status(200).send(doc);
+      })
       .catch(error => res.status(400).send(`Cannot get contact: ${error}`));
 })
 
