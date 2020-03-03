@@ -89,7 +89,7 @@ app.get('/cards/:cardId', (req, res) => {
       .then(doc => {
         const cardToRetrieve = doc;
         cardToRetrieve.id = req.params.cardId;
-        cardToRetrieve.picture = `https://ygoprodeck.com/pics/${cardToRetrieve.id}.jpg`;
+        cardToRetrieve.picture = `https://storage.googleapis.com/ygoprodeck.com/pics/${cardToRetrieve.id}.jpg`;
         res.status(200).send(doc);
       })
       .catch(error => res.status(400).send(`Cannot get contact: ${error}`));
@@ -110,7 +110,7 @@ app.post('/packs/buy', async (req, res) => {
       availableCards = Object.values(docs);
       Object.keys(docs).forEach((docId , index) => {
         availableCards[index].id = docId;
-        availableCards[index].picture = `https://ygoprodeck.com/pics/${docId}.jpg`;
+        availableCards[index].picture = `https://storage.googleapis.com/ygoprodeck.com/pics/${docId}.jpg`;
       });
 
       // selectin 2 randomly
