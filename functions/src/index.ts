@@ -88,7 +88,7 @@ app.get('/cards/:cardId', (req, res) => {
       .getDocument(db, cardsCollection, req.params.cardId)
       .then(doc => {
         const cardToRetrieve = doc;
-        cardToRetrieve.id = Object.keys(doc)[0];
+        cardToRetrieve.id = req.params.cardId;
         cardToRetrieve.picture = `https://ygoprodeck.com/pics/${cardToRetrieve.id}.jpg`;
         res.status(200).send(doc);
       })
