@@ -9,4 +9,6 @@ export class VirgiCard {
   rehired: boolean;
   rarity: string;
   rating: string;
+  picture: string;
+  id: string;
 }
