@@ -10,6 +10,6 @@ export class CardService {
   constructor( private http: HttpClient ) { }
 
   getVirgiCard( virgiCardId ): Promise<any> {
-    return this.http.get(`${ENDPOINT.URL}${virgiCardId}`).toPromise();
+    return this.http.get(`${ENDPOINT.URL_CARD}/${virgiCardId}`).toPromise();
   }
 }

@@ -48,4 +48,6 @@ Thumbs.db
 # Firebase cache
 /firebase
 
-/functions
+/functions/node_modules
+/functions/lib
+

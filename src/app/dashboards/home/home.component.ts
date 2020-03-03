@@ -21,8 +21,12 @@ export class HomeComponent implements OnInit {
   }
 
   async executeSearch() {
-    this.virgiCard = await this.cardService.getVirgiCard(this.searchText);
-    console.log('this.virgiCard', this.virgiCard);
+    if (this.searchText) {
+      this.virgiCard = await this.cardService.getVirgiCard(this.searchText);
+      console.log('this.virgiCard', this.virgiCard);
+      this.showCardDetail = !!this.virgiCard || this.showCardDetail;
+    } else {
+      this.showCardDetail = false;
+    }
   }
-
 }
