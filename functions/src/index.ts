@@ -95,6 +95,24 @@ app.get('/cards/:cardId', (req, res) => {
       .catch(error => res.status(400).send(`Cannot get contact: ${error}`));
 })
 
+// Api para obtener todas las cartas
+app.get('/cards', async (req, res) => {
+  let allCards: any[] = [];
+  try {
+    await firebaseHelper.firestore.queryData(db, cardsCollection, []).then(docs => {
+      // convierto el objetos de objetos en un array de objetos y les asigno su id y fotito
+      allCards = Object.values(docs);
+      Object.keys(docs).forEach((docId , index) => {
+        allCards[index].id = docId;
+        allCards[index].picture = `https://storage.googleapis.com/ygoprodeck.com/pics/${docId}.jpg`;
+      });
+        res.status(200).send(allCards);
+    });
+  } catch (error) {
+    res.status(400).send(`algo paso macho xd =>  ${error}`)
+  }
+})
+
 // Api para comprar una carta
 app.post('/packs/buy', async (req, res) => {
   let availableCards: any[] = [];
