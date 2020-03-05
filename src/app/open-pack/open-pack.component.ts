@@ -10,6 +10,7 @@ export class OpenPackComponent implements OnInit {
   packOpened = false;
   openingPack = false;
   enoughVirgoPoints = true;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,6 @@ export class OpenPackComponent implements OnInit {
     audio.play();
     audio.onended = () => {
       this.packOpened = true;
-    }
+    };
   }
 }

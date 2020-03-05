@@ -1,0 +1,36 @@
+
+.container {
+  height: calc(100% - 42px);
+  width: 100%;
+  display: grid;
+
+  .slifer-container {
+    height: 100%;
+    position: relative;
+  }
+  .ra-container {
+    height: 100%;
+    position: relative;
+  }
+  .obelisk-container {
+    height: 100%;
+    position: relative;
+  }
+}
+
+
+@media only screen and (min-width: 370px) {
+  .container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+
+// TODO usar el archivo de variables de juampi
+@media only screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
