@@ -46,4 +46,14 @@ testem.log
 Thumbs.db
 
 # Firebase cache
-/firebase
+/.firebase
+
+# Functions shits
+## Compiled JavaScript files
+/functions/**/*.js
+/functions/**/*.js.map
+
+# Typescript v1 declaration files
+/functions/typings/
+
+/functions/node_modules/

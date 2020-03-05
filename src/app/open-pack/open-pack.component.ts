@@ -9,7 +9,7 @@ export class OpenPackComponent implements OnInit {
 
   packOpened = false;
   openingPack = false;
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +23,6 @@ export class OpenPackComponent implements OnInit {
     audio.play();
     audio.onended = () => {
       this.packOpened = true;
-    }
+    };
   }
 }
