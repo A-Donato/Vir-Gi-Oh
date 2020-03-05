@@ -22,11 +22,21 @@ export class HomeComponent implements OnInit {
 
   async executeSearch() {
     if (this.searchText) {
-      this.virgiCard = await this.cardService.getVirgiCard(this.searchText);
-      console.log('this.virgiCard', this.virgiCard);
-      this.showCardDetail = !!this.virgiCard || this.showCardDetail;
+      try {
+        this.virgiCard = await this.cardService.getVirgiCard(this.searchText);
+        console.log('this.virgiCard', this.virgiCard);
+        this.showCardDetail = !!this.virgiCard || this.showCardDetail;
+      } catch (error) {
+        this.virgiCard = null;
+        this.showCardDetail = true;
+        console.log('error', error);
+      }
     } else {
       this.showCardDetail = false;
     }
+  }
+
+  returnToMain() {
+    this.showCardDetail = false;
   }
 }

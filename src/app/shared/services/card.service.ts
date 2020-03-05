@@ -12,4 +12,8 @@ export class CardService {
   getVirgiCard( virgiCardId ): Promise<any> {
     return this.http.get(`${ENDPOINT.URL_CARD}/${virgiCardId}`).toPromise();
   }
+
+  getAllVirgiCards(): Promise<any> {
+    return this.http.get(ENDPOINT.URL_ALL_CARDS).toPromise();
+  }
 }
