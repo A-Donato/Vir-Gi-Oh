@@ -1,3 +1,22 @@
+// Breakpoints for responsive media-queries
 $breakpoint-mobile: 370px;
 $breakpoint-tablet: 768px;
 $breakpoint-web: 1024px;
+
+// MOBILE VARS
+@media only screen and (min-width: $breakpoint-mobile) {
+  // CARD SIZES
+  // Open pack
+  $open-pack-card-width: 200px; //creo
+  $open-pack-card-height: 290px; //creo
+
+}
+
+// WEB VARS
+@media only screen and (min-width: $breakpoint-web) {
+  // CARD SIZES
+  // Open pack
+  $open-pack-card-width: 300px;
+  $open-pack-card-height: 435px;
+
+}

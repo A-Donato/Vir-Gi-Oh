@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FloatingIcons } from './floating-icons.component';
+import { OpenedPackComponent } from './opened-pack.component';
 
-describe('FloatingLionKingComponent', () => {
-  let component: FloatingIcons;
-  let fixture: ComponentFixture<FloatingIcons>;
+describe('RarePackComponent', () => {
+  let component: OpenedPackComponent;
+  let fixture: ComponentFixture<OpenedPackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FloatingIcons ]
+      declarations: [ OpenedPackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FloatingIcons);
+    fixture = TestBed.createComponent(OpenedPackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

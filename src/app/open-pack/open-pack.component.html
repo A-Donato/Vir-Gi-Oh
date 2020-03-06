@@ -1,4 +1,5 @@
 <app-closed-pack *ngIf="!packOpened" (click)="openPack()" [openPack]="openingPack"></app-closed-pack>
 <ng-container *ngIf="packOpened">
-  <app-pobre-pack></app-pobre-pack>
+  <app-pobre-pack *ngIf="!enoughVirgoPoints"></app-pobre-pack>
+  <app-opened-pack *ngIf="enoughVirgoPoints" [bestRarity]="bestRarity" [cards]="cards"></app-opened-pack>
 </ng-container>
