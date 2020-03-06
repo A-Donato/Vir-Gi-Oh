@@ -12,6 +12,7 @@ import { FloatingIcons } from './open-pack/pobre-pack/floating-icons/floating-ic
 import { TouchMeNotButtonComponent } from './open-pack/pobre-pack/touch-me-not-button/touch-me-not-button.component';
 import { OpenedPackComponent } from './open-pack/opened-pack/opened-pack.component';
 import { PackCardComponent } from './open-pack/pack-card/pack-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // --------- PrimeNg Modules -----------
 import { MenubarModule } from 'primeng/menubar';
@@ -35,7 +36,8 @@ import { ButtonModule } from 'primeng/button';
     BrowserAnimationsModule,
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

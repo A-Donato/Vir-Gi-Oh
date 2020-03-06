@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 const musicVolume = 0.2;
 
@@ -8,24 +8,8 @@ const musicVolume = 0.2;
   styleUrls: ['./opened-pack.component.scss']
 })
 export class OpenedPackComponent implements OnInit {
-  cards = [
-    {
-      id: 1,
-      showCard: false,
-      revealCard: false
-    },
-    {
-      id: 2,
-      showCard: false,
-      revealCard: false
-    },
-    {
-      id: 3,
-      showCard: false,
-      revealCard: false
-    },
-  ];
-  maxRarity = 'ultra-rare';
+  @Input() bestRarity;
+  @Input() cards = [];
   showCard1 = false;
   showCard2 = false;
   showCard3 = false;
@@ -43,7 +27,7 @@ export class OpenedPackComponent implements OnInit {
   backgroundGiants = false;
   backgroundSpaceman = false;
   showMoreButton = false;
-  gifs = [ 
+  gifs = [
     { src: '../../../assets/gif/ultra-rare-1.gif', show: false, class: 'ultra-rare-gif-1' },
     { src: '../../../assets/gif/ultra-rare-2.gif', show: false, class: 'ultra-rare-gif-2' },
     { src: '../../../assets/gif/ultra-rare-3.gif', show: false, class: 'ultra-rare-gif-3' },
@@ -53,6 +37,14 @@ export class OpenedPackComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.cards = this.cards.map((card, index) => {
+      return {
+        ...card,
+        id: index + 1,
+        showCard: false,
+        revealCard: false
+      }
+    })
     this.playGiants();
     this.playFullAnimation();
   }
@@ -75,19 +67,19 @@ export class OpenedPackComponent implements OnInit {
     }, 13000);
     setTimeout(() => {
       this.cards[2].revealCard = true;
-      if (this.maxRarity === 'rare') {
+      if (this.bestRarity === 'R') {
+        this.fireworks = true;
+      } else if (this.bestRarity === 'SR') {
         this.giantsAudio.pause();
         this.playSilbatos();
-      } else if (this.maxRarity === 'super-rare') {
-        this.fireworks = true;
-      } else if (this.maxRarity === 'ultra-rare') {
+      } else if (this.bestRarity === 'UR') {
         this.giantsAudio.pause();
         this.explode = true;
         this.playExplosion();
       }
       this.playBackground();
     }, 24300);
-    if (this.maxRarity === 'ultra-rare') {
+    if (this.bestRarity === 'UR') {
       setTimeout(() => {
         this.playSpaceman();
         this.beatSpaceman = true;
@@ -109,12 +101,12 @@ export class OpenedPackComponent implements OnInit {
       }, 43000);
     }
     setTimeout(() => {
-      if (this.maxRarity === 'rare') {
+      if (this.bestRarity === 'R') {
+        this.beat = true;
+      } else if (this.bestRarity === 'SR') {
         this.playTusa();
         this.showConfetti = true;
         this.danceTusa = true;
-      } else if (this.maxRarity === 'super-rare') {
-        this.beat = true;
       } else {
       }
     }, 26000)
@@ -139,14 +131,14 @@ export class OpenedPackComponent implements OnInit {
   }
 
   private playBackground() {
-    switch (this.maxRarity) {
-      case 'rare':
-        this.backgroundTusa = true;
-        break;
-      case 'super-rare':
+    switch (this.bestRarity) {
+      case 'R':
         this.backgroundGiants = true;
         break;
-      case 'ultra-rare':
+      case 'SR':
+        this.backgroundTusa = true;
+        break;
+      case 'UR':
         this.backgroundSpaceman = true;
         break;
     }

@@ -7,6 +7,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class PackCardComponent implements OnInit, OnChanges {
   @Input() number;
+  @Input() imgsrc;
   @Input() showCard = false;
   @Input() revealCard = false;
   @Input() beat = false;

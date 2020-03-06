@@ -4,9 +4,10 @@
   'opened-pack-spaceman': backgroundSpaceman
 }">
   <app-pack-card 
-    [number]="cards[0].id" 
+    [number]="cards[0].id"
     [showCard]="cards[0].showCard" 
     [revealCard]="cards[0].revealCard" 
+    [imgsrc]="cards[0].picture"
     [beat]="beat"
     [danceTusa]="danceTusa"
     [spaceman]="explode"></app-pack-card>
@@ -14,6 +15,7 @@
     [number]="cards[2].id" 
     [showCard]="cards[2].showCard" 
     [revealCard]="cards[2].revealCard" 
+    [imgsrc]="cards[2].picture"
     [beat]="beat"
     [danceTusa]="danceTusa"
     [spaceman]="beatSpaceman"></app-pack-card>
@@ -21,6 +23,7 @@
     [number]="cards[1].id" 
     [showCard]="cards[1].showCard" 
     [revealCard]="cards[1].revealCard" 
+    [imgsrc]="cards[1].picture"
     [beat]="beat"
     [danceTusa]="danceTusa"
     [spaceman]="explode"></app-pack-card>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService } from '../shared/services/card.service';
+import { VIRGO_USERS } from '../constants/virgo-users';
 
 @Component({
   selector: 'app-open-pack',
@@ -10,13 +12,28 @@ export class OpenPackComponent implements OnInit {
   packOpened = false;
   openingPack = false;
   enoughVirgoPoints = true;
-  
-  constructor() { }
+  cards = [];
+  bestRarity: string;
+
+  constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
   }
 
   openPack() {
+    this.cardService.buyPack(VIRGO_USERS.CHESTER_TESTER).subscribe(response => {
+      this.enoughVirgoPoints = true;
+      const { cards, bestRarity } = response;
+      this.cards = cards;
+      this.bestRarity = bestRarity;
+    }, () => {
+      this.enoughVirgoPoints = false;
+    }, () => {
+      this.playAnimation();
+    })
+  }
+
+  playAnimation() {
     this.openingPack = true;
     var audio = new Audio();
     audio.src = '../../assets/mp3/rising-drums.mp3';

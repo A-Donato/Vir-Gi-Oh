@@ -21,7 +21,7 @@
       'flip-card-img-3': number === 3 && showCard
     }">
   <!-- Frente de la carta --> <!-- ngStyle es necesario sino no se muestra el dorso de la carta :c -->
-  <img class="flip-card-img" src="https://ygoprodeck.com/pics/46986414.jpg"
+  <img class="flip-card-img" [src]="imgsrc"
     [ngStyle]="{'background-color': revealCard ? 'inherit' : 'black'}"
     [ngClass]="{
       'flip-card-img-1': number === 1 && showCard,
