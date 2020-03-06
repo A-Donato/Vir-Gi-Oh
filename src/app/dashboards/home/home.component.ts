@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
 
   gods = ['SLIFER', 'OBELISK', 'RA'];
   actions = ['Ver Deck', 'Comprar Pack', 'Liberar Cartas'];
+  redirectTo = ['deck', 'open', 'cards?']
   constructor() { }
 
   ngOnInit(): void {
