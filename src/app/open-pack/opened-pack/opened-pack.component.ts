@@ -110,17 +110,23 @@ export class OpenedPackComponent implements OnInit {
       } else {
       }
     }, 26000)
-    setTimeout(() => {
-      this.showConfetti = false;
-      this.fireworks = false;
-      this.explode = false;
-      this.showMoreButton = true;
-      this.gifs[0].show = false;
-      this.gifs[1].show = false;
-      this.gifs[2].show = false;
-      this.gifs[3].show = false;
-      this.gifs[4].show = false;
-    }, 50000)
+    if (this.bestRarity === 'R' || this.bestRarity === 'SR') {
+      setTimeout(() => {
+        this.showConfetti = false;
+        this.fireworks = false;
+        this.explode = false;
+        this.showMoreButton = true;
+      }, 50000)
+    } else {
+      setTimeout(() => {
+        this.gifs[0].show = false;
+        this.gifs[1].show = false;
+        this.gifs[2].show = false;
+        this.gifs[3].show = false;
+        this.gifs[4].show = false;
+        this.showMoreButton = true;
+      }, 60000)
+    }
   }
 
   private playGiants() {

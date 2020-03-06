@@ -21,16 +21,19 @@ export class OpenPackComponent implements OnInit {
   }
 
   openPack() {
-    this.cardService.buyPack(VIRGO_USERS.CHESTER_TESTER).subscribe(response => {
-      this.enoughVirgoPoints = true;
-      const { cards, bestRarity } = response;
-      this.cards = cards;
-      this.bestRarity = bestRarity;
-    }, () => {
-      this.enoughVirgoPoints = false;
-    }, () => {
-      this.playAnimation();
-    })
+    if (!this.openingPack) {
+      this.openingPack = true;
+      this.cardService.buyPack(VIRGO_USERS.CHESTER_TESTER).subscribe(response => {
+        this.enoughVirgoPoints = true;
+        const { cards, bestRarity } = response;
+        this.cards = cards;
+        this.bestRarity = bestRarity;
+      }, () => {
+        this.enoughVirgoPoints = false;
+      }, () => {
+        this.playAnimation();
+      })
+    }
   }
 
   playAnimation() {
