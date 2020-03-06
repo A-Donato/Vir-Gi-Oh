@@ -32,7 +32,7 @@ export class AuthenticationComponent implements OnInit {
       { label: 'Gokus ftw', value: VIRGO_USERS.BORE},
       { label: 'Indio a caballo', value: VIRGO_USERS.CHARLY},
       { label: 'EL OTP', value: VIRGO_USERS.JUAMPI},
-      { label: 'kisio el masi', value: VIRGO_USERS.MAXI},
+      { label: 'Kawai idol', value: VIRGO_USERS.MAXI},
       { label: 'El del hoyo negro', value: VIRGO_USERS.NICO},
       { label: 'Juega con papelitos', value: VIRGO_USERS.RODRI},
       { label: 'Me llevo mi mazo a mi casa 💅', value: VIRGO_USERS.VALEN},

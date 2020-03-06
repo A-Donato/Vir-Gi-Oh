@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/shared/services/card.service';
 import { VirgiCard } from 'src/app/models/virgi-card';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,19 @@ export class HomeComponent implements OnInit {
   showCardDetail = false;
   virgiCard: VirgiCard;
 
-  constructor( private cardService: CardService ) { }
+  constructor( private cardService: CardService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    const queryParams = this.route.snapshot.queryParams;
+    console.log('currentURL', queryParams);
+    try {
+      if (queryParams.id) {
+        this.searchText = queryParams.id;
+        this.executeSearch();
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
   }
 
   async executeSearch() {
@@ -36,7 +47,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  returnToMain() {
-    this.showCardDetail = false;
+  goToAdvancedSearch() {
+    this.router.navigate(['/advanced-search']);
   }
 }

@@ -16,6 +16,10 @@ const routes: Routes = [
   },
   {
     path: 'open', component: OpenPackComponent
+  },
+  {
+    path: 'advanced-search',
+    loadChildren: () => import('./dashboards/advanced-search/advanced-search.module').then(m => m.AdvancedSearchModule)
   }
 ];
 

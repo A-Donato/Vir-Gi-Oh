@@ -11,4 +11,7 @@ export class VirgiCard {
   rating: string;
   picture: string;
   id: string;
+  desc: string;
+  race: string;
+  attribute: string;
 }

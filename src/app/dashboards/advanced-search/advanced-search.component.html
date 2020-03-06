@@ -1,0 +1,65 @@
+<p-card class="table-container" *ngIf="showTable" >
+  <p-table #virgiTable [columns]="columns" [value]="virgiCards" [scrollable]="true" scrollHeight="75vh" (onFilter)="setNumberOfRows($event)" sortMode="multiple">
+
+    <!-- Global filter -->
+    <ng-template pTemplate="caption" class="virgo-header">
+      <div style="text-align: left;">
+        <div>
+          Resultados Actuales: {{this.actualRows}}
+        </div>
+        <div>
+          Tributaje Aproximado: {{this.actualTributing}}
+        </div>
+        <div>
+          Typos de cartas:
+          • Normales: {{this.normalCards}}
+          • Raras: {{this.rareCards}}
+          • Super Raras: {{this.superRareCards}}
+          • Ultra Raras: {{this.ultraRarelCards}}
+        </div>
+      </div>
+      <div style="text-align: right">
+        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+        <input type="text" pInputText size="50" placeholder="Global Filter" (input)="virgiTable.filterGlobal($event.target.value, 'contains')" style="width:auto">
+      </div>
+    </ng-template>
+
+    <!-- Los headers capo -->
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+        </th>
+      </tr>
+
+      <!-- Aca estan los filtros capo -->
+      <tr>
+        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+          <input *ngSwitchCase="'name'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'id'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'rarity'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'rating'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'inPlay'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'type'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'contains')">
+          <input *ngSwitchCase="'owner'" pInputText type="text" (input)="virgiTable.filter($event.target.value, col.field, 'startsWith')">
+        </th>
+      </tr>
+    </ng-template>
+
+    <!-- El body capo -->
+    <ng-template pTemplate="body" let-virgiCards let-columns="columns">
+      <tr [pSelectableRow]="virgiCards">
+        <td *ngFor="let col of columns">
+           {{virgiCards[col.field]}}
+           <a style="cursor: pointer;" *ngIf="col.field === 'id'" (click)="goToDetails(virgiCards[col.field])"> ver </a>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+<p-sidebar [(visible)]="showDetails" position="right" styleClass="ui-sidebar-lg" (onHide)="onSidebarHide()">
+  <app-virgi-card-details [virgiCard]="selectedVirgiCard"  ></app-virgi-card-details>
+</p-sidebar>
+
+<p-progressSpinner *ngIf="!showTable" [style]="{width: '250px', height: '250px'}" strokeWidth="5" animationDuration=".5s" ></p-progressSpinner>

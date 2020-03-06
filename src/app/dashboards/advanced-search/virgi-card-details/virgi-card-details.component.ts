@@ -1,26 +1,26 @@
-import { Component, OnInit, Input, OnChanges, ViewEncapsulation } from '@angular/core';
-import { VirgiCard } from 'src/app/models/virgi-card';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+
 @Component({
-  selector: 'app-card-detail',
-  templateUrl: './card-detail.component.html',
-  styleUrls: ['./card-detail.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-virgi-card-details',
+  templateUrl: './virgi-card-details.component.html',
+  styleUrls: ['./virgi-card-details.component.scss']
 })
-export class CardDetailComponent implements OnInit, OnChanges {
-  @Input() virgiCard: VirgiCard;
-
-  isInVirgoGameLabel = '';
-  isInVirgoGamePicture = '';
-  virgoNota = '';
-  virgoErrorMessage = '';
-
+export class VirgiCardDetailsComponent implements OnInit, OnChanges {
+  @Input() virgiCard;
+  isInVirgoGameLabel: string;
+  isInVirgoGamePicture: any;
+  virgoNota: any;
+  virgoErrorMessage: string;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges() {
-    console.log('la virgiCard')
+    this.completeFields();
+  }
+
+  private completeFields() {
     if (this.virgiCard) {
       if (this.virgiCard.inPlay) {
         this.isInVirgoGameLabel = 'PERO QUE PREGUUUUUNTA';
