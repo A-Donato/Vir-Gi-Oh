@@ -1,0 +1,31 @@
+<div *ngIf="showCard" class="flip-card" [ngClass]="{
+  'flip-card-show-1': number === 1 && showCard,
+  'flip-card-show-2': number === 2 && showCard,
+  'flip-card-show-3': number === 3 && showCard,
+  'flip-card-all-revealed-1': beat || danceTusa,
+  'flip-card-all-revealed-2': beat || danceTusa,
+  'flip-card-all-revealed-3': beat || danceTusa,
+  'flip-card-beat': beat,
+  'flip-card-dance-tusa-1': number === 1 && danceTusa,
+  'flip-card-dance-tusa-2': number === 2 && danceTusa,
+  'flip-card-dance-tusa-3': number === 3 && danceTusa,
+  'flip-card-spaceman-1': number === 1 && spaceman,
+  'flip-card-spaceman-2': number === 2 && spaceman,
+  'flip-card-spaceman-3': number === 3 && spaceman
+}">
+  <!-- Dorso de la carta -->
+  <img class="flip-card-img" src="../../../assets/png/card-back.png"
+    [ngClass]="{
+      'flip-card-img-1': number === 1 && showCard,
+      'flip-card-img-2': number === 2 && showCard,
+      'flip-card-img-3': number === 3 && showCard
+    }">
+  <!-- Frente de la carta --> <!-- ngStyle es necesario sino no se muestra el dorso de la carta :c -->
+  <img class="flip-card-img" [src]="imgsrc"
+    [ngStyle]="{'background-color': revealCard ? 'inherit' : 'black'}"
+    [ngClass]="{
+      'flip-card-img-1': number === 1 && showCard,
+      'flip-card-img-2': number === 2 && showCard,
+      'flip-card-img-3': number === 3 && showCard
+    }">
+</div>

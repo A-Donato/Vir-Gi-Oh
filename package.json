@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "virgi-deploy": "ng build --prod && firebase deploy"
+    "virgi-deploy": "npm run virgi-deploy:ui",
+    "virgi-deploy:ui": "ng build --prod && firebase deploy --only hosting",
+    "virgi-deploy:apis": "ng build --prod && firebase deploy --only functions"
   },
   "private": true,
   "dependencies": {
