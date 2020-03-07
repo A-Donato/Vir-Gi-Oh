@@ -1,0 +1,23 @@
+:host {
+
+  .table-container {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    height: 100%;
+  }
+
+  .loading-text {
+    display: block;
+    background-color: #f1f1f1;
+    min-height: 19px;
+    animation: pulse 1s infinite ease-in-out;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+}
+
+  ::ng-deep .ui-table .ui-table-caption {
+    display: flex;
+    place-content: space-between;
+  }

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="main">
+    <div>
+      <img [src]="this.virgiCard?.picture" [alt]="virgoErrorMessage">
+    </div>
+    <div class="virgo-data">
+      <div class="virgo-title">
+        <h1>{{virgiCard?.type}}</h1>
+      </div>
+      <div class="virgo-description">
+        <h2>Rareza: {{virgiCard?.rarity}}</h2>
+        <h2>Raiting: {{virgiCard?.rating}}</h2>
+        <h2>Nota: {{virgoNota}}</h2>
+        <h2>EN JUEGO: <span *ngIf="isInVirgoGameLabel"> {{isInVirgoGameLabel}} </span> </h2>
+        <img *ngIf="isInVirgoGamePicture" [src]="isInVirgoGamePicture">
+      </div>
+    </div>
+  </div>
+  <div class="virgo-extra-data">
+    <p-card header="VirgoInfo VirgoExtra">
+      <div class="info">
+        <div class="type">
+          <strong>Tipo:</strong> {{this.virgiCard?.type}}
+        </div>
+        <div class="description">
+          <strong>Descripción:</strong> {{this.virgiCard?.desc}}
+        </div>
+        <div class="attr">
+          <strong>Atributo:</strong> {{this.virgiCard?.attribute}}
+        </div>
+        <div>
+          <strong>Raza:</strong> {{this.virgiCard?.race}}
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>
+
+<!-- this.selectedVirgiCard.desc = extraData.desc;
+this.selectedVirgiCard.race = extraData.race;
+this.selectedVirgiCard.attribute = extraData.attribute;
+this.selectedVirgiCard.type = extraData.type; -->
