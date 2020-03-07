@@ -58,4 +58,5 @@ export class AuthenticationComponent implements OnInit {
     this.authService.selectPlayer(this.selectedPlayer);
     this.router.navigate([ROUTES.HOME_DASHBOARD]);
   }
+  
 }

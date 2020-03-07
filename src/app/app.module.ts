@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { LoadingScreenComponent } from './dashboards/loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ButtonModule } from 'primeng/button';
     FloatingIcons,
     TouchMeNotButtonComponent,
     OpenedPackComponent,
-    PackCardComponent
+    PackCardComponent,
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,

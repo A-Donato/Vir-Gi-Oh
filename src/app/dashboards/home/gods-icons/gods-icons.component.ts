@@ -11,9 +11,9 @@ export class GodsIconsComponent implements OnInit {
   @Input() actionName: string;
   @Input() redirectTo: string;
   imagesOfGods = {
-     SLIFER: 'assets/slifer.png',
-     OBELISK: 'assets/obelisk.png',
-     RA: 'assets/ra.png'
+    SLIFER: 'assets/png/slifer.png',
+    OBELISK: 'assets/png/obelisk.png',
+    RA: 'assets/png/ra.png'
   };
   selectedGod: string;
 
