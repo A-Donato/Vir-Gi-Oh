@@ -5,6 +5,9 @@ import { MenuItem } from 'primeng/api';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  host: {
+    '(document:keypress)': 'handleKeyboardEvent($event)'
+  },
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
@@ -14,5 +17,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
     ];
+  }
+
+    
+  handleKeyboardEvent(event: KeyboardEvent) { 
+    console.log(event.key);
   }
 }
