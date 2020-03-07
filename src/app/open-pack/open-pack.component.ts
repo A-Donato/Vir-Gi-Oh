@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../shared/services/card.service';
 import { VIRGO_USERS } from '../constants/virgo-users';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-open-pack',
@@ -15,22 +16,22 @@ export class OpenPackComponent implements OnInit {
   cards = [];
   bestRarity: string;
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   openPack() {
     if (!this.openingPack) {
-      this.openingPack = true;
-      this.cardService.buyPack(VIRGO_USERS.CHESTER_TESTER).subscribe(response => {
+      this.cardService.buyPack(this.authService.getPlayer()).subscribe(response => {
+        this.openingPack = true;
         this.enoughVirgoPoints = true;
         const { cards, bestRarity } = response;
         this.cards = cards;
         this.bestRarity = bestRarity;
+        this.playAnimation();
       }, () => {
         this.enoughVirgoPoints = false;
-      }, () => {
         this.playAnimation();
       })
     }

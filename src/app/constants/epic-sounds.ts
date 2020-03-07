@@ -1,3 +1,3 @@
 export const EPIC_SOUNDS = {
-  YU_GI_OH_OPENING: 'assets/opening.mp3',
+  YU_GI_OH_OPENING: 'assets/mp3/opening.mp3',
 };

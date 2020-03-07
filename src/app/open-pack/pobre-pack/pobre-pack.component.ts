@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PobrePackComponent {
   showExitButton = false;
+  pobreLabel = 'Pobre';
 
   constructor() {
     var audio = new Audio();
@@ -19,5 +20,12 @@ export class PobrePackComponent {
       audio.loop = true;
       this.showExitButton = true;
     }
+    const virgoInsults = ['Virgo', 'Virgo', 'Putocagón', 'Putito', 'Chupachichi', 'Bobo'];
+    setInterval(() => {
+      this.pobreLabel = virgoInsults[Math.round(Math.random()*(virgoInsults.length-1))];
+      setTimeout(() => {
+        this.pobreLabel = 'Pobre';
+      }, 750)
+    }, 4000)
   }
 }

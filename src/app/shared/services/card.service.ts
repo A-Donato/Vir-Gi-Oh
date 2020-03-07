@@ -22,10 +22,6 @@ export class CardService {
   }
 
   buyPack(user) {
-    return this.httpClient.post<any>(`${ENDPOINT.URL}/packs/buy`, {
-      params: {
-        virgiUserId: user
-      }
-    });
+    return this.httpClient.get<any>(`${ENDPOINT.URL}?${user}`, {});
   }
 }

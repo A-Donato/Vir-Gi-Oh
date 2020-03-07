@@ -26,7 +26,7 @@ export class AuthenticationComponent implements OnInit {
   constructor(private audioService: AudioService, private authService: AuthService, private router: Router, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.playEpicAudio();
+    // this.playEpicAudio();
     this.globalListenFunc = this.renderer.listen('document', 'keypress', e => {
       console.log(e);
     });

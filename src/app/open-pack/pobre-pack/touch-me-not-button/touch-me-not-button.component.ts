@@ -24,7 +24,7 @@ export class TouchMeNotButtonComponent implements OnInit, OnChanges {
     // This check is in order to not exit if button is clicked before all movements are made
     // This can happen if user is fast or if on mobile
     if (this.exitButtonHovers === this.exitButtonLabels.length) {
-      // this.router.navigate(['']);
+      this.router.navigate(['/home']);
     }
   }
 
