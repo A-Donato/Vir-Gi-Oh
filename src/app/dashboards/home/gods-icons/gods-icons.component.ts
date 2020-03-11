@@ -15,17 +15,26 @@ export class GodsIconsComponent implements OnInit {
      OBELISK: 'assets/png/obelisk.png',
      RA: 'assets/png/ra.png'
   };
+  smokes = new Array(8);
   selectedGod: string;
+  selectedGodName: string;
+  hoveredGod: any;
 
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.selectedGod = this.imagesOfGods[this.godIdentifier];
+    this.selectedGodName = Object.keys(this.imagesOfGods).find(key => this.imagesOfGods[key] === this.selectedGod);
+    console.log('sele', this.selectedGodName);
   }
 
   onClick() {
     this.router.navigate([this.redirectTo]);
   }
 
+  hoverListItem(opportunity, entered) {
+    this.hoveredGod = entered ? opportunity : '';
+    console.log('hovered ', this.hoveredGod);
+ }
 }

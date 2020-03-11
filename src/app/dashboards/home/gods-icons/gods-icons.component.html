@@ -1,5 +1,12 @@
-<div class="god-container">
-  <img class="god-image" src={{selectedGod}}>
+<div class="god-container"
+  (mouseenter)="hoverListItem(selectedGodName, true)"
+  (mouseleave)="hoverListItem(selectedGodName, false)"
+>
+  <img class="god-image" src={{selectedGod}} (click)="onClick()">
+  <!-- <div class="slide-animation" > -->
+  <div class="images-container" *ngIf="this.hoveredGod">
+    <img *ngFor="let smoke of smokes; let i = index" class="slide-animation-{{i}} god-{{selectedGodName}}" src="assets/png/virgo-particles.png" width="100%">
+  </div>
   <div class="action" (click)="onClick()">
     <span>{{actionName}}</span>
   </div>
